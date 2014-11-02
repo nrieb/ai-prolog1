@@ -1,3 +1,7 @@
+/*
+From Ch 3 of Luger and Stubblefield "AI Algroithms, Data Structures and Idioms in Prolog, Lisp, and Java"
+*/
+
 :- module(stack, [empty_stack/1,
 		  stack/3,
 		  member_stack/2,

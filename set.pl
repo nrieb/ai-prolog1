@@ -1,3 +1,7 @@
+/*
+From Ch 3 of Luger and Stubblefield "AI Algroithms, Data Structures and Idioms in Prolog, Lisp, and Java"
+*/
+
 :- module(set, [empty_set/1,
 		member_set/2,
 		delete_if_in_set/3,

@@ -1,3 +1,8 @@
+/*
+From Ch 4 of Luger and Stubblefield "AI Algroithms, Data Structures and Idioms in Prolog, Lisp, and Java"
+*/
+
+
 :- module(bfs, [bfs_path/3,
 		bfs_go/2,
 	        moves/4,
