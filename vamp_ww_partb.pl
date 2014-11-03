@@ -1,3 +1,5 @@
+%Part b: 3 vamps, 3 werewolves, boat seats 2.  Different move ordering that part a.
+
 :- use_module('bfs.pl').
 
 % opposite side

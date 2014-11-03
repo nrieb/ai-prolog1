@@ -1,3 +1,5 @@
+% Part c : 4 vamps, 4 werewolves, and the boat can seat 2.
+
 :- use_module('bfs.pl').
 
 % opposite side
