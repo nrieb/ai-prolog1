@@ -15,15 +15,6 @@ writelist([]) :- nl.
 writelist([H|T]) :- write(H), write(' '), writelist(T).
 
 move(state(X, Vamps_west, WWs_west),
-     state(Y, New_vamps, WWs_west)) :-
-    opp(X, Y),
-    move_n_to(Y, Vamps_west, New_vamps, 2),
-    max_size(Max),
-    between(0, Max, New_vamps),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, New_vamps, WWs_west)]).
-
-move(state(X, Vamps_west, WWs_west),
      state(Y, Vamps_west, New_wws)) :-
     opp(X, Y),
     move_n_to(Y, WWs_west, New_wws, 2),
@@ -60,6 +51,15 @@ move(state(X, Vamps_west, WWs_west),
     between(0, Max, New_wws),
     writelist([state(X, Vamps_west, WWs_west),
 	     state(Y, Vamps_west, New_wws)]).
+
+move(state(X, Vamps_west, WWs_west),
+     state(Y, New_vamps, WWs_west)) :-
+    opp(X, Y),
+    move_n_to(Y, Vamps_west, New_vamps, 2),
+    max_size(Max),
+    between(0, Max, New_vamps),
+    writelist([state(X, Vamps_west, WWs_west),
+	     state(Y, New_vamps, WWs_west)]).
 
 unsafe(state(_, Vamps_west, WWs_west)) :-
     Vamps_west > 0,

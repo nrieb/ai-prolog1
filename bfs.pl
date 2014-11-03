@@ -4,16 +4,15 @@ From Ch 4 of Luger and Stubblefield "AI Algroithms, Data Structures and Idioms i
 
 
 :- module(bfs, [bfs_path/3,
-		bfs_go/2,
-	        moves/4,
-		get_children/4]).
+		bfs_go/2]).
+
 
 :- use_module('set.pl').
 :- use_module('queue.pl').
 
 bfs_path(Open_queue, _, _) :-
     empty_queue(Open_queue),
-    write('Graph searched, no solution found.').
+    write('Graph searched, no solution found.'), nl.
 bfs_path(Open_queue, Closed_set, Goal) :-
     dequeue([State, Parent], Open_queue, _),
     State = Goal,
