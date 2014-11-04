@@ -16,6 +16,7 @@ def origin_dest(line):
         return None
 
 def main():
+    file_name = sys.argv[1]
     graph = pgv.AGraph(strict=False, directed=True)
     step = 0
     for line in sys.stdin:
@@ -25,7 +26,7 @@ def main():
             graph.add_edge(origin, dest, label=str(step))
             step += 1
     graph.layout(prog='dot')
-    graph.draw("parta_test.png")
+    graph.draw(file_name+".png")
 
 if __name__ == "__main__":
     main()
