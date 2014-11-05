@@ -6,8 +6,14 @@ Prolog version
 ==============
 SWI=Prolog version 6.6.6
 
+Program Description
+===================
+This is my solution for the vampires and werewolves program.  The vampires and werewolves must use a boat to move across a river.  At any point in time, werewolves may not outnumber vampires on any side of the river. 
+
+I’ve used a BFS search based upon George Luger’s BFS algorithm.
+
 State representation
-====================
+-------------------
 My state representation is encoded like
 
     state(Boat’s shore (e for east, w for west), # of vampires on the western shore,
@@ -20,10 +26,10 @@ For example:
 means that the boat is on the eastern shore, there are three vampires on the western shore, and there is one werewolf on the western shore.  In the simple 3 vampires 3 werewolves case, then this implies that there are zero vampires on the eastern shore and two werewolves on the eastern shore.
 
 Output Format
-=============
-Visited states
---------------
-Format is
+-------------
+###Visited states###
+
+Format is:  
 parent :SPACE: child
 
 state(e,0,0) state(w,2,0)  
@@ -35,8 +41,7 @@ state(e,0,0) state(w,0,1)
 state(e,3,1) state(w,3,3)  
 state(e,3,1) state(w,3,2)  
 
-Solution Output
----------------
+###Solution Output###
 Solution path is:  
 state(e,0,0)  
 state(w,0,2)  
