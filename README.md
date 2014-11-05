@@ -1,13 +1,13 @@
 Author
-------
+======
 nrieb AT cs dot unm dot edu
 
 Prolog version
---------------
-SWI-Prolog version 6.6.6
+==============
+SWI=Prolog version 6.6.6
 
 State representation
---------------------
+====================
 My state representation is encoded like
 
     state(Boat’s shore (e for east, w for west), # of vampires on the western shore,
@@ -20,9 +20,9 @@ For example:
 means that the boat is on the eastern shore, there are three vampires on the western shore, and there is one werewolf on the western shore.  In the simple 3 vampires 3 werewolves case, then this implies that there are zero vampires on the eastern shore and two werewolves on the eastern shore.
 
 Output Format
--------------
+=============
 Visited states
-==============
+--------------
 Format is
 parent :SPACE: child
 
@@ -36,7 +36,7 @@ state(e,3,1) state(w,3,3)
 state(e,3,1) state(w,3,2) 
 
 Solution Output
-===============
+---------------
 Solution path is: 
 state(e,0,0)
 state(w,0,2)
