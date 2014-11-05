@@ -26,18 +26,18 @@ Visited states
 Format is
 parent :SPACE: child
 
-state(e,0,0) state(w,2,0) 
-state(e,0,0) state(w,0,2) 
-state(e,0,0) state(w,1,1) 
-state(e,0,0) state(w,1,0) 
+state(e,0,0) state(w,2,0)
+state(e,0,0) state(w,0,2)
+state(e,0,0) state(w,1,1)
+state(e,0,0) state(w,1,0)
 state(e,0,0) state(w,0,1)
 ...
-state(e,3,1) state(w,3,3) 
-state(e,3,1) state(w,3,2) 
+state(e,3,1) state(w,3,3)
+state(e,3,1) state(w,3,2)
 
 Solution Output
 ---------------
-Solution path is: 
+Solution path is:
 state(e,0,0)
 state(w,0,2)
 state(e,0,1)
