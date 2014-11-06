@@ -16,7 +16,6 @@ bfs_path(Open_queue, _, _) :-
 bfs_path(Open_queue, Closed_set, Goal) :-
     dequeue([State, Parent], Open_queue, _),
     State = Goal,
-    write(Parent), write(' '), write(State), nl,
     write('Solution path is: '), nl,
     printsolution([State, Parent], Closed_set).
 bfs_path(Open_queue, Closed_set, Goal) :-
