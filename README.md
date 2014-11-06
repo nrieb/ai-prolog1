@@ -6,6 +6,15 @@ Prolog version
 ==============
 SWI=Prolog version 6.6.6
 
+Important Files Description
+===========================
+vamp_ww.pl - Part a prolog file
+vamp_ww_partb.pl - Part b prolog file
+vamp_ww_partc.pl - Part c prolog file (4 vamps and wws, boat only holds 2)
+vamp_ww_partc_hold3.pl - Part c prolog file (4 vamps and wws, boat holds 3)
+*.log files - output of the above prolog files when using the 'find' predicate
+graphs.pdf - the graphs of the results of the above log files.
+
 Program Description
 ===================
 This is my solution for the vampires and werewolves program.  The vampires and werewolves must use a boat to move across a river.  At any point in time, werewolves may not outnumber vampires on any side of the river. 
