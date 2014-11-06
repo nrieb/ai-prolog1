@@ -20,8 +20,9 @@ move_n_to(w, Val, New_val, N) :-
 max_size(3).
 
 %Output a list
-writelist([]) :- nl.
-writelist([H|T]) :- write(H), write(' '), writelist(T).
+writelist(_).
+%writelist([]) :- nl.
+%writelist([H|T]) :- write(H), write(' '), writelist(T).
 
 % move 2 vamps over to opposite shore
 move(state(X, Vamps_west, WWs_west),

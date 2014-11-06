@@ -21,6 +21,7 @@ bfs_path(Open_queue, Closed_set, Goal) :-
 bfs_path(Open_queue, Closed_set, Goal) :-
     dequeue([State, Parent], Open_queue, Rest_open_queue),
     get_children(State, Rest_open_queue, Closed_set, Children),
+    printchildren(Children),
     add_list_to_queue(Children, Rest_open_queue, New_open_queue),
     union([[State, Parent]], Closed_set, New_closed_set),
     bfs_path(New_open_queue, New_closed_set, Goal), !.
@@ -46,3 +47,8 @@ printsolution([State, Parent], Closed_set) :-
     member_set([Parent, Grandparent], Closed_set),
     printsolution([Parent, Grandparent], Closed_set),
     write(State), nl.
+
+printchildren([]).
+printchildren([[Child, Parent] | Children]) :-
+    write(Parent), write(' '), write(Child), nl,
+    printchildren(Children).
