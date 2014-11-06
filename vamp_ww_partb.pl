@@ -24,6 +24,16 @@ writelist(_).
 %writelist([]) :- nl.
 %writelist([H|T]) :- write(H), write(' '), writelist(T).
 
+% move 2 vamps over to opposite shore
+move(state(X, Vamps_west, WWs_west),
+     state(Y, New_vamps, WWs_west)) :-
+    opp(X, Y),
+    move_n_to(Y, Vamps_west, New_vamps, 2),
+    max_size(Max),
+    between(0, Max, New_vamps),
+    writelist([state(X, Vamps_west, WWs_west),
+	     state(Y, New_vamps, WWs_west)]).
+
 % move 2 werewolves over to opposite shore
 move(state(X, Vamps_west, WWs_west),
      state(Y, Vamps_west, New_wws)) :-
@@ -46,16 +56,6 @@ move(state(X, Vamps_west, WWs_west),
     writelist([state(X, Vamps_west, WWs_west),
 	     state(Y, New_vamps, New_wws)]).
 
-% move 1 vamp over to opposite shore
-move(state(X, Vamps_west, WWs_west),
-     state(Y, New_vamps, WWs_west)) :-
-    opp(X, Y),
-    move_n_to(Y, Vamps_west, New_vamps, 1),
-    max_size(Max),
-    between(0, Max, New_vamps),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, New_vamps, WWs_west)]).
-
 % move 1 werewolf over to opposite shore
 move(state(X, Vamps_west, WWs_west),
      state(Y, Vamps_west, New_wws)) :-
@@ -66,11 +66,11 @@ move(state(X, Vamps_west, WWs_west),
     writelist([state(X, Vamps_west, WWs_west),
 	     state(Y, Vamps_west, New_wws)]).
 
-% move 2 vamps over to opposite shore
+% move 1 vamp over to opposite shore
 move(state(X, Vamps_west, WWs_west),
      state(Y, New_vamps, WWs_west)) :-
     opp(X, Y),
-    move_n_to(Y, Vamps_west, New_vamps, 2),
+    move_n_to(Y, Vamps_west, New_vamps, 1),
     max_size(Max),
     between(0, Max, New_vamps),
     writelist([state(X, Vamps_west, WWs_west),
