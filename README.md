@@ -19,7 +19,7 @@ Program Description
 ===================
 This is my solution for the vampires and werewolves program.  The vampires and werewolves must use a boat to move across a river.  At any point in time, werewolves may not outnumber vampires on any side of the river. 
 
-I’ve used a BFS search based upon George Luger’s BFS algorithm.
+I’ve used a BFS search based upon George Luger’s BFS algorithm.  This is where I am printing my solution and the intermediate steps.
 
 State representation
 -------------------
