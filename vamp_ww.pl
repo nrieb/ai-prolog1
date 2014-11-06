@@ -19,20 +19,13 @@ move_n_to(w, Val, New_val, N) :-
 %Max number of things.
 max_size(3).
 
-%Output a list
-writelist(_).
-%writelist([]) :- nl.
-%writelist([H|T]) :- write(H), write(' '), writelist(T).
-
 % move 2 vamps over to opposite shore
 move(state(X, Vamps_west, WWs_west),
      state(Y, New_vamps, WWs_west)) :-
     opp(X, Y),
     move_n_to(Y, Vamps_west, New_vamps, 2),
     max_size(Max),
-    between(0, Max, New_vamps),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, New_vamps, WWs_west)]).
+    between(0, Max, New_vamps).
 
 % move 2 werewolves over to opposite shore
 move(state(X, Vamps_west, WWs_west),
@@ -40,9 +33,7 @@ move(state(X, Vamps_west, WWs_west),
     opp(X, Y),
     move_n_to(Y, WWs_west, New_wws, 2),
     max_size(Max),
-    between(0, Max, New_wws),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, Vamps_west, New_wws)]).
+    between(0, Max, New_wws).
 
 % move 1 vamps and 1 werewolf over to opposite shore
 move(state(X, Vamps_west, WWs_west),
@@ -52,9 +43,7 @@ move(state(X, Vamps_west, WWs_west),
     max_size(Max),
     between(0, Max, New_wws),
     move_n_to(Y, Vamps_west, New_vamps, 1),
-    between(0, Max, New_vamps),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, New_vamps, New_wws)]).
+    between(0, Max, New_vamps).
 
 % move 1 vamp over to opposite shore
 move(state(X, Vamps_west, WWs_west),
@@ -62,9 +51,7 @@ move(state(X, Vamps_west, WWs_west),
     opp(X, Y),
     move_n_to(Y, Vamps_west, New_vamps, 1),
     max_size(Max),
-    between(0, Max, New_vamps),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, New_vamps, WWs_west)]).
+    between(0, Max, New_vamps).
 
 % move 1 werewolf over to opposite shore
 move(state(X, Vamps_west, WWs_west),
@@ -72,9 +59,7 @@ move(state(X, Vamps_west, WWs_west),
     opp(X, Y),
     move_n_to(Y, WWs_west, New_wws, 1),
     max_size(Max),
-    between(0, Max, New_wws),
-    writelist([state(X, Vamps_west, WWs_west),
-	     state(Y, Vamps_west, New_wws)]).
+    between(0, Max, New_wws).
 
 %unsafe if werewolves outnumber vampires on the west
 unsafe(state(_, Vamps_west, WWs_west)) :-
