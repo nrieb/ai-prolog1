@@ -18,6 +18,7 @@ def origin_dest(line):
 def main():
     file_name = sys.argv[1]
     graph = pgv.AGraph(strict=False, directed=True)
+    graph.graph_attr['label'] = file_name
     step = 0
     for line in sys.stdin:
         line = line.strip()
